@@ -1,9 +1,16 @@
 #include<iostream>
 #include"Game.h"
+
+const std::string QUIT = "quit";
+const std::string START = "start";
+void handleCommands() {
+	std::string op="";
+	while (op != QUIT) {
+
+	}
+}
+
 int main() {
-	Game* g = new Game();
-	g->printBoard();
-	std::cin.get();
-	delete g;
+	handleCommands();
 	return 0;
 }
