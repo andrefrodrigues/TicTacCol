@@ -1,5 +1,6 @@
 #include"Game.h"
 #include<iostream>
+#include<exception>
 Game::Game() {
 	finished = false;
 	going = false;
@@ -31,13 +32,13 @@ void Game::startGame() {
 
 void Game::play(short col) {
 	if (!this->canPlay(col)){
-
+		throw new std::exception("Invalid place to play!\n");
 	}
 }
 
 bool Game::canPlay(short col) {
 	if (col < 1 && col > BOARD_SIZE)
-		return false;
+		throw new std::exception("Invalid value!\n");
 
 	return collumnOcupation[col] < BOARD_SIZE;
 }
